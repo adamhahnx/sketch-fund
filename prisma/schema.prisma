@@ -1,0 +1,39 @@
+generator client {
+	provider	= "prisma-client-js"
+}
+
+datasource db {
+	provider	= "postgresql"
+}
+
+enum Currency {
+	COP
+	USDC
+}
+
+model Consumer {
+	id				String		@id @db.Uuid @default(uuid())
+	name			String		@unique
+	currency		Currency
+}
+
+model Merchant {
+	id				String		@id @db.Uuid @default(uuid())
+	name			String		@unique
+	currency		Currency
+}
+
+model Product {
+	id				String		@id @db.Uuid @default(uuid())
+	name			String		@unique
+	price			Decimal
+	merchantId		String		@db.Uuid
+}
+
+model Order {
+	id				String		@id @db.Uuid @default(uuid())
+	consumerId		String		@db.Uuid
+	merchantId		String		@db.Uuid
+	productIds		String[]
+	productCounts	Int[]
+}

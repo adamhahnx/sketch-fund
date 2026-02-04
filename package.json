@@ -1,0 +1,30 @@
+{
+  "name": "sketch-fund",
+  "version": "1.0.0",
+  "description": "See the README for details.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx prisma generate && node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamhahnx/sketch-fund.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamhahnx/sketch-fund/issues"
+  },
+  "homepage": "https://github.com/adamhahnx/sketch-fund#readme",
+  "dependencies": {
+    "@api/mural-production": "file:.api/apis/mural-production",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "fastify": "^5.7.3",
+    "pg": "^8.18.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.3.0"
+  }
+}
